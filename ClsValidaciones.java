@@ -5,26 +5,7 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 public class Comunes {
-    private Object evt;
-    
-    public boolean isNumeric(String cadena){
-        try {
-                Integer.parseInt(cadena);
-                return true;
-        } catch (NumberFormatException nfe){
-                return false;
-        }
-    }
-    
-    public boolean isDouble(String cadena){
-        try {
-                Double.parseDouble(cadena);
-                return true;
-        } catch (NumberFormatException nfe){
-                return false;
-        }
-    }
-    
+
     public void llenartextos(java.awt.event.KeyEvent evt, int tamanio, String txt){
         char C= evt.getKeyChar();
         int car = evt.getKeyChar();
