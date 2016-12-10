@@ -5,7 +5,8 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 public class Comunes {
-
+	 
+	 //Primera línea de documentación
     public void llenartextos(java.awt.event.KeyEvent evt, int tamanio, String txt){
         char C= evt.getKeyChar();
         int car = evt.getKeyChar();
