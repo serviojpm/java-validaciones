@@ -30,10 +30,10 @@ public class Comunes {
            JOptionPane.showMessageDialog(null,"¡Sólo puede ingresar "+ tamanio +" carácteres!","Mensaje del Sistema",JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+
     public void llenarnumeros(java.awt.event.KeyEvent evt, int tamanio, String txt){
         char C= evt.getKeyChar();
-     
+
         if(Character.isLetter(C))
         {
             evt.consume();
@@ -52,7 +52,7 @@ public class Comunes {
             JOptionPane.showMessageDialog(null,"¡Sólo puede ingresar "+ tamanio +" números!","Mensaje del Sistema",JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+
     public void maximo(java.awt.event.KeyEvent evt, int tamanio, String txt){
         //----------------Poner limite de caracteres--------------------
         if (txt.length()== tamanio){
@@ -60,7 +60,7 @@ public class Comunes {
             JOptionPane.showMessageDialog(null,"¡Sólo puede ingresar "+ tamanio +" carácteres!","Mensaje del Sistema",JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+
     public void llenarnumerodecimales(java.awt.event.KeyEvent evt, int tamanioEntero, int tamanioDecimal, String txt){
         //----------------Poner limite de caracteres--------------------
         char c = evt.getKeyChar();
@@ -76,7 +76,7 @@ public class Comunes {
             JOptionPane.showMessageDialog(null, "No puede ingresar más puntos!!!", "Mensaje del sistema", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+
     public void esDecimal(java.awt.event.KeyEvent evt, int tamanioE, int tamanioD, String cad)
     {
         boolean hayPunto=false;
@@ -88,10 +88,10 @@ public class Comunes {
             if ( cad.charAt(i) == '.'){ //Detectar si hay un punto decimal en la cadena
                 hayPunto=true;
             }
-        
+
         if(hayPunto){ //Si hay punto guardar la posicion donde se encuentra el carater punto
             posicionDelPunto=cad.indexOf('.'); //(si la cadena tiene varios puntos, detecta donde esta el primero).
-            
+
             for( i=0;i<posicionDelPunto; i++ )
                 parteEntera.append(cad.charAt(i)) ; //Guardar la parte entera en una variable
 
@@ -107,28 +107,28 @@ public class Comunes {
                     evt.consume(); //Incluye el caso en el que la cadena tenga dos o mas puntos
 
             if( parteDecimal.length() > tamanioD-1 )
-                evt.consume();            
+                evt.consume();
         }
     }
 
-    
+
     private static final String PATTERN_EMAIL = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
         + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
- 
+
     public boolean validarEmail(String email) {
         Pattern pattern = Pattern.compile(PATTERN_EMAIL);
- 
+
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
      }
-    
+
     public boolean ValidarFechaInicial(Date inicio, Date fin){
         if(inicio.after(fin))
             return true;
         else
-            return false;    
+            return false;
     }
-    
+
     public boolean ValidarFechaFinal(Date inicio, Date fin){
         if(fin.before(inicio))
             return true;
